@@ -17,7 +17,6 @@ This project is a focused **Cisco Packet Tracer lab** to practice Layer 2 concep
 ## ⚙️ Configurations
 
 ### VLANs
-```bash
 vlan 10
  name USERS
 vlan 20
@@ -44,7 +43,7 @@ interface port-channel 1
  switchport mode trunk
  switchport trunk allowed vlan 10,20
 
-Verification Commands
+🔍 Verification Commands
 show etherchannel summary
 show lacp neighbor
 show interfaces trunk
@@ -55,13 +54,13 @@ show vlan brief
 show port-security interface fa0/1
 show mac address-table interface fa0/1
 
-Troubleshooting
+🛠 Troubleshooting
 Po1 shows (SD), members (s) → Config mismatch (trunking, VLAN list, speed/duplex).
 PC ↔ Server ping fails → Check VLAN assignment & allowed VLANs on Po1.
 Sticky MAC not learning → Generate traffic or reset with:
 default interface fa0/1
 
-What I Practiced
+🎯 What I Practiced
 EtherChannel creation and LACP negotiation
 Port-Channel trunk configuration
 Port Security (sticky MACs, violation modes, shutdown/recovery)
