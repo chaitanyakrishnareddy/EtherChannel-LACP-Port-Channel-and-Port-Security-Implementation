@@ -7,16 +7,16 @@ This project is a focused **Cisco Packet Tracer lab** to practice Layer 2 concep
 
 ---
 
-## 📌 Topology
+📌 Topology
 
 - **SW1 ↔ SW2**: Two FastEthernet links combined into a Port-Channel (Po1) using **LACP**  
 - **PCs**: Connected as access ports with Port Security enabled  
 - **Server**: Optional, can be placed in VLAN 10 (user VLAN) or VLAN 20 (isolated server VLAN)
 
 
-## ⚙️ Configurations
+⚙️ Configurations
 
-### VLANs
+VLANs
 vlan 10
  name USERS
 vlan 20
