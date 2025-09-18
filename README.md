@@ -23,41 +23,63 @@ vlan 20
  name SERVER
 
 Port Security (example for an access port)
+
 interface fa0/1
+
  switchport mode access
+ 
  switchport access vlan 10
+ 
  switchport port-security
+ 
  switchport port-security maximum 1
+ 
  switchport port-security violation shutdown
+ 
  switchport port-security mac-address sticky
+ 
  spanning-tree portfast
+ 
  spanning-tree bpduguard enable
 
 EtherChannel with LACP (two links Fa0/23–24)
+
 interface range fa0/23 - 24
+
  switchport mode trunk
+ 
  switchport trunk allowed vlan 10,20
+ 
  channel-group 1 mode active   ! use passive on the other switch
+ 
 !
 interface port-channel 1
+
  switchport mode trunk
+ 
  switchport trunk allowed vlan 10,20
+ 
 
 🔍 Verification Commands
 show etherchannel summary
+
 show lacp neighbor
+
 show interfaces trunk
+
 show interfaces port-channel 1 switchport
 
 show vlan brief
 
 show port-security interface fa0/1
+
 show mac address-table interface fa0/1
 
 🛠 Troubleshooting
 Po1 shows (SD), members (s) → Config mismatch (trunking, VLAN list, speed/duplex).
 PC ↔ Server ping fails → Check VLAN assignment & allowed VLANs on Po1.
 Sticky MAC not learning → Generate traffic or reset with:
+
 default interface fa0/1
 
 🎯 What I Practiced
